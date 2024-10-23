@@ -94,6 +94,11 @@ declare -a find_parameters_skip=()
 for d in "${ASIMOV_SKIP_PATHS[@]}"; do
     find_parameters_skip+=( -not \( -path "${d}" -prune \) )
 done
+# Collect already excluded directories to not descent into them
+while IFS= read -r line
+do
+    find_parameters_skip+=( -not \( -path "${line}" -prune \) )
+done < <(mdfind -onlyin "${ASIMOV_ROOT}" com_apple_backup_excludeItem = 'com.apple.backupd' | sort | uniq)
 
 # Iterate over the directory/sentinel pairs to construct the `find` expression.
 declare -a find_parameters_vendor=()
