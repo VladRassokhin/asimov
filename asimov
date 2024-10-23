@@ -50,8 +50,6 @@ readonly ASIMOV_VENDOR_DIR_SENTINELS=(
     'Carthage Cartfile'                # Carthage
     'Pods Podfile'                     # CocoaPods
     'bower_components bower.json'      # Bower (JavaScript)
-    'build build.gradle'               # Gradle
-    'build build.gradle.kts'           # Gradle Kotlin Script
     'build pubspec.yaml'               # Flutter (Dart)
     'build setup.py'                   # Python
     'dist setup.py'                    # PyPI Publishing (Python)
