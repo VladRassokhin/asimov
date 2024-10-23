@@ -20,7 +20,7 @@ set -Eeu -o pipefail
 readonly ASIMOV_ROOT=~
 
 # Paths to unconditionally skip over. This prevents Asimov from modifying the
-# Time Machine exclusions for these paths (and decendents). It has an important
+# Time Machine exclusions for these paths (and descendants). It has an important
 # side-effect of speeding up the search.
 readonly ASIMOV_SKIP_PATHS=(
     ~/.Trash
